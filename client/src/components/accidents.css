@@ -1,0 +1,30 @@
+.twenty, .nineteen {
+    width: 600px;
+    height: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.stats {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.statss p {
+    text-align: center;
+}
+
+.statss {
+    margin-top: 40px;
+    margin-bottom: 40px;
+
+}
+
+.acc {
+    color: #000;
+    font-size: 100px;
+    text-align: center;
+  }

@@ -1,0 +1,140 @@
+
+
+.home,
+.report,
+.problem,
+.accidents,
+.committee {
+  display: flex;
+  height: 90vh;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+}
+
+
+.reportss {
+  background-color: white;
+  border-radius: 5px;
+  padding: 2em;
+  width: 100%;
+  margin: 0 0 2em 0;
+}
+.gggg{
+  
+  text-align: center;
+  padding-bottom: 30px;
+
+}
+
+.report {
+  background-color: #fff;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #000000;
+  font-size: 100px;
+}
+
+.problem {
+  background-color: #fff;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #000000;
+  font-size: 100px;
+}
+
+.accidents {
+  background-color: #fff;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #000000;
+  font-size: 100px;
+}
+
+.committee {
+  background-color: #fff;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #000000;
+  font-size: 100px;
+}
+
+.send {
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.send button {
+  margin: 1em 0;
+  padding: 1.2em;
+  border-radius: 5px;
+  border: none;
+  width: 300px;
+  text-transform: uppercase;
+  -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+  color: #fff;
+  cursor: pointer;
+  outline: none;
+  background: -webkit-gradient(linear, left top, right top, from(#fbc02d), to(black));
+  background: linear-gradient(to right, #fbc02d, black);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.send button svg {
+  font-size: 1.1rem;
+  margin-left: 10px;
+}
+
+.send button:hover {
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  background: -webkit-gradient(linear, right top, left top, from(#fbc02d), to(black));
+  background: linear-gradient(to left, #fbc02d, black);
+}
+
+.tble123 {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background: url('./images/caution.jpg') center center/cover no-repeat;
+
+}
+
+table {
+  border-top: 100px;
+  border: 2px solid forestgreen;
+background-color: white;
+  justify-content: center;
+  align-items: center;
+}
+  
+th {
+  border-bottom: 1px solid black;
+  width: 400px;
+  
+}
+  
+td {
+  text-align: center;
+  height: 80px;
+}
