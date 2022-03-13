@@ -45,7 +45,7 @@ const sendEmailRegister = (to, url, text) => {
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
       rel="stylesheet"
     />
-    <title>Passioncorners | Account Activation</title>
+    <title>Safety App | Account Activation</title>
     <style>
       body {
         background-color: #333333;
@@ -148,7 +148,7 @@ const sendEmailReset = (to, url, text, name) => {
         href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
         rel="stylesheet"
       />
-      <title>Passioncorners | Account Activation</title>
+      <title>Safety App | Account Activation</title>
       <style>
         body {
           background-color: #333333;

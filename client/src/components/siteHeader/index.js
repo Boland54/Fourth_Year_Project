@@ -12,7 +12,6 @@ import { withRouter } from "react-router-dom";
 import { useTheme } from "@material-ui/core/styles";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import './header.css'
-import axios from "axios";
 import { AuthContext } from "../../context/AuthContext";
 
 
@@ -41,7 +40,6 @@ const SiteHeader = ( { history }) => {
     { label: "Home", path: "/home" },
     { label: "Problems", path: "/problems" },
     { label: "Accidents", path: "/accidents" },
-    { label: "Committee", path: "/committee" },
   ];
 
   const handleMenuSelect = (pageURL) => {

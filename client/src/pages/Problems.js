@@ -72,6 +72,7 @@ Checkbox
                   setItems(
                     items.map(d => {
                       d.select = value;
+                      deleteTodo();
                       return d;
                     })
                   );

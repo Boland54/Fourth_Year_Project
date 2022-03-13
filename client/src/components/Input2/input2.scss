@@ -35,7 +35,7 @@
     input:focus + span {
       top: -15px;
       font-size: 10px;
-      background: linear-gradient(to right, yellow, red);
+      background: linear-gradient(to right, yellow, black);
       border-radius: 4px;
       padding: 0 5px;
       color: #fff;
@@ -52,11 +52,11 @@
   }
 }
 .toast-failed {
-  background: yellow !important;
+  background: $yellow  !important;
   color: #fff;
 }
 .toast-success {
-  background: green !important;
+  background: $green  !important;
   color: #fff;
 }
 input[type="text"]:disabled {

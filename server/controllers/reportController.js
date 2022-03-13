@@ -1,5 +1,6 @@
 
 const Report = require("../models/userReport");
+const User = require("../models/userModel");
 
 
 const reportController = {
@@ -7,11 +8,15 @@ const reportController = {
 
         const userDescription = req.body.description;
         const userLocation = req.body.location;
+        const user = User;
+        const userId = await user.findOne({email:'20084498@mail.wit.ie'}).exec();
+
   
         
         const newReport = new Report({
           description: userDescription,
           location: userLocation,
+          user: userId._id
         });
 
 
@@ -36,7 +41,7 @@ const reportController = {
 
   reportinfo: async (req, res) => {
 
-    const userReports = await Report.find({}, (err, reportData) => {
+    const userReports = await Report.find({},  (err, reportData) => {
         if (err) throw err;
         if (reportData) {
             res.end(JSON.stringify(reportData));
