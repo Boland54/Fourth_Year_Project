@@ -230,7 +230,8 @@ const currDate = new Date().toLocaleDateString();
                   color="#fff000"
                   onClick={handleClick12}
                 > LOGOUT
-                </button>            </div>
+                </button>            
+                </div>
           </div>
         </form>
       </div>

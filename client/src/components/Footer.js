@@ -48,6 +48,10 @@ function Footer() {
           </div>
         </div>
       </div> */}
+                <div class='footer-link-items'>
+            <h2>Profile</h2>
+            <Link to='/profile'>Update</Link>
+            </div>
       <section className='footer-subscription'>
         <p className='footer-subscription-heading'>
         SafetyApp © 2022 

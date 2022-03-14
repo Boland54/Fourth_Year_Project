@@ -1,16 +1,32 @@
 import React from 'react';
 import '../App.css';
-import { Buttons } from '../components/Button';
+import { Button } from '../components/Button';
 import '../components/HeroSection.css';
 import { Link } from 'react-router-dom';
-import Footer from '../components/Footer';
-import Cards from '../components/Cards';
 import SiteHeader from '../components/siteHeader';
+import axios from "axios";
+import { useContext} from "react";
+import { AuthContext } from "../context/AuthContext";
+
+
 
 
 
 
 function HeroSection() {
+  const { dispatch } = useContext(AuthContext);
+
+
+  const handleClick12 = async (e) => {
+    e.preventDefault();
+    try {
+      await axios.get("/api/auth/signout");
+      localStorage.removeItem("_appSignging");
+      dispatch({ type: "SIGNOUT" });
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
 
 
@@ -23,30 +39,37 @@ function HeroSection() {
       <div className='hero-butns'>
 
       <a href="/report" target="_parent">
-        <Buttons
+        <Button
           className='butns'
           buttonStyle='butn--outline'
           buttonSize='butn--large'
-          component={Link} to="/report"       >
-          Report
-        </Buttons>
+          component={Link} to="/"       >
+          REPORT
+        </Button>
         </a>
         
 
         <a href="https://www.youtube.com/watch?v=4bkr5lpKGUM" target="_parent">
-        <Buttons
+        <Button
           className='butns1'
           buttonStyle='butn--primary'
           buttonSize='butn--large'
           onClick={console.log('hey')}
         >
           Safety Features <i className='far fa-play-circle' />
-        </Buttons>
+        </Button>
         </a>
-      </div>
+
+            <Button
+                  label="logout"
+                  className='butns'
+                  buttonStyle='butn--outline'
+                  buttonSize='butn--large'
+                  component={Link} to="/report"  
+                  onClick={handleClick12}
+                > LOGOUT
+                </Button>            </div>
     </div>
-    <Cards />
-<Footer />
     </>
   );
 }

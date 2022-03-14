@@ -13,15 +13,22 @@ import { useTheme } from "@material-ui/core/styles";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import './header.css'
 import { AuthContext } from "../../context/AuthContext";
+import { colors } from "@material-ui/core";
 
 
 const useStyles = makeStyles((theme) => ({
   title: {
     flexGrow: 1,
-    
+  },
+
+  
+
+  headerStyle: {
+    backgroundColor: 'transparent',
+    border: 'transparent',
+    color: '#fff000'
   },
   backgroundColor: '#ffffff',
-  offset: theme.mixins.toolbar,
 }));
 
 const SiteHeader = ( { history }) => {
@@ -31,15 +38,17 @@ const SiteHeader = ( { history }) => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
+  
   const { dispatch } = useContext(AuthContext);
 
 
 
   const menuOptions = [
-    { label: "Profile", path: "/" },
-    { label: "Home", path: "/home" },
+    { label: "Home", path: "/" },
     { label: "Problems", path: "/problems" },
     { label: "Accidents", path: "/accidents" },
+    { label: "Committee", path: "/committee" },
+
   ];
 
   const handleMenuSelect = (pageURL) => {
@@ -52,9 +61,9 @@ const SiteHeader = ( { history }) => {
 
   return (
     <>
-    <div className="header">
-      <AppBar position="fixed" className="appbar">
-        <Toolbar>
+    <div className={classes.headerStyle}>
+      <AppBar position="fixed" className={classes.headerStyle}>
+        <Toolbar className={classes.headerStyle}>
   
           <Typography variant="h4" className={classes.title} >
          SafetyApp
@@ -73,11 +82,12 @@ const SiteHeader = ( { history }) => {
                   <MenuIcon />
                 </IconButton>
                 <Menu
+                className="menu"
                   id="menu-appbar"
                   anchorEl={anchorEl}
                   anchorOrigin={{
                     vertical: "top",
-                    horizontal: "right",
+                    horizontal: "center",
                   }}
                   keepMounted
                   transformOrigin={{

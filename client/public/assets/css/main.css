@@ -16,6 +16,10 @@ img {
   width: 100%;
 }
 
+title{
+background-color: transparent;
+
+}
 .container {
   max-width: 1440px;
   width: 100%;

@@ -7,7 +7,7 @@ import { AuthContext } from "./context/AuthContext";
 import { useContext, useEffect } from "react";
 import axios from "axios";
 import Accidents from './pages/Accidents';
-import Committee from './pages/Committee';
+import Committee from './pages/Committee/Committee';
 import Home from './pages/HomePage';
 import Report from './pages/Report';
 import Problem from './pages/Problems';
@@ -48,12 +48,12 @@ function App() {
     <Router>
       <Switch>
       <Route path='/problems' component={Problem} />
-      <Route path='/home' exact component={Home} />
+      <Route path='/' exact component={Home} />
       <Route path='/report' exact component={Report} />
           <Route path='/accidents' component={Accidents} />
           <Route path='/committee' component={Committee} />        
         <Route
-          path="/"
+          path="/profile"
           exact
           component={isLoggedIn ? ProfileLayout : AuthLayout}
         />
