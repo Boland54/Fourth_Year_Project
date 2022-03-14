@@ -36,7 +36,7 @@ function Cards() {
               path='/accidents'
             />
             <CardItem
-              src='../images/img-8.jpg'
+              src='../images/ladder.gif'
               text='Practical jokes and horseplay can be dangerous, especially around heavy machinery. If you feel the urge to play, resist it until after work.'
               label='Dont be prankster'
               path='/accidents'

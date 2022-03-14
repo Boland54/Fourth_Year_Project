@@ -47,48 +47,34 @@ function Problems() {
       setItems(items);
   };
 
+ 
+
   return (
     <>
     <SiteHeader />
     <div align="center">
       <div className="tble123">
-                  {
-      items.map(item => (
+
       
         <table>
+
         <tr>
-        <th>
-Checkbox
-            </th>
           <th>Description</th>
           <th>Location</th>
         </tr>
+
+        {
+      items.map(item => (
+        <>
         <tr>
-          <td>              
-             <input
-                type="checkbox"
-                onChange={e => {
-                  let value = e.target.checked;
-                  setItems(
-                    items.map(d => {
-                      d.select = value;
-                      deleteTodo();
-                      return d;
-                    })
-                  );
-                }}
-              /></td>
+        
           <td>{item.description}</td>
           <td>{item.location}</td>
         </tr>
-
+  </>
+  ))
+}
         </table>
-  
-                ))
-                }
-          <div className="deleteItems" onSubmit={deleteTodo}>
-            <button type="submit">Delete</button>
-          </div>
 
 
                 </div>
