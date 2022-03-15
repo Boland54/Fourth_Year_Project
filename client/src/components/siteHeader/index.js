@@ -24,8 +24,7 @@ const useStyles = makeStyles((theme) => ({
   
 
   headerStyle: {
-    backgroundColor: 'transparent',
-    border: 'transparent',
+    backgroundColor: '#000',
     color: '#fff000'
   },
   backgroundColor: '#ffffff',
@@ -47,7 +46,6 @@ const SiteHeader = ( { history }) => {
     { label: "Home", path: "/" },
     { label: "Problems", path: "/problems" },
     { label: "Accidents", path: "/accidents" },
-    { label: "Committee", path: "/committee" },
 
   ];
 
@@ -61,8 +59,8 @@ const SiteHeader = ( { history }) => {
 
   return (
     <>
-    <div className={classes.headerStyle}>
-      <AppBar position="fixed" className={classes.headerStyle}>
+    <div>
+      <AppBar position="fixed" >
         <Toolbar className={classes.headerStyle}>
   
           <Typography variant="h4" className={classes.title} >
@@ -87,7 +85,7 @@ const SiteHeader = ( { history }) => {
                   anchorEl={anchorEl}
                   anchorOrigin={{
                     vertical: "top",
-                    horizontal: "center",
+                    horizontal: "right",
                   }}
                   keepMounted
                   transformOrigin={{

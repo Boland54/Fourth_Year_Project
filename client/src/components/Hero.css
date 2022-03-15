@@ -50,7 +50,7 @@
   }
   
   .dark {
-    color: #1c2237;
+    color: #000;
   }
 
   .brightbg {
@@ -58,7 +58,7 @@
   }
   
   .darkBg {
-    background-color: #1c2237;
+    background-color: #000;
   }
   
   .home__hero-subtitle {

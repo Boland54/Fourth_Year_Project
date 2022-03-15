@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
-import '../App.css';
-import Footer from '../components/Footer';
-import SiteHeader from '../components/siteHeader';
+import '../../App.css';
+import Footer from '../../components/Footer';
+import SiteHeader from '../../components/siteHeader';
 import axios from "axios";
 import { toast } from "react-toastify";
 

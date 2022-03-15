@@ -6,11 +6,11 @@ import ResetLayout from "./Layouts/ResetLayout/ResetLayout";
 import { AuthContext } from "./context/AuthContext";
 import { useContext, useEffect } from "react";
 import axios from "axios";
-import Accidents from './pages/Accidents';
-import Committee from './pages/Committee/Committee';
+import Accidents from './pages/Accidents/Accidents';
+import Precaution from './pages/Precaution/Precaution';
 import Home from './pages/HomePage';
 import Report from './pages/Report';
-import Problem from './pages/Problems';
+import Problem from './pages/Problems/Problems';
 
 
 
@@ -51,7 +51,7 @@ function App() {
       <Route path='/' exact component={Home} />
       <Route path='/report' exact component={Report} />
           <Route path='/accidents' component={Accidents} />
-          <Route path='/committee' component={Committee} />        
+          <Route path='/precaution' component={Precaution} />        
         <Route
           path="/profile"
           exact
