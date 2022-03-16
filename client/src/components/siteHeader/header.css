@@ -116,6 +116,8 @@
     .nav-item:hover {
       border: none;
     }
+    .nav-item:active {
+color: #fff000    }
   
     .nav-item {
       width: 100%;

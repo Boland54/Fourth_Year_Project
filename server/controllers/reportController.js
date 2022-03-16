@@ -11,7 +11,12 @@ const reportController = {
         const user = User;
         const userId = await user.findOne({email:'20084498@mail.wit.ie'}).exec();
 
-  
+      // const rf_token = createToken.access({ id: user._id });
+      // res.cookie("_apprftoken", rf_token, {
+      //   httpOnly: true,
+      //   path: "/api/auth/access",
+      //   maxAge: 24 * 60 * 60 * 1000, // 24h
+      // });
         
         const newReport = new Report({
           description: userDescription,

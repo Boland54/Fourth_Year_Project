@@ -45,3 +45,6 @@ app.use(cors());
 app.use(userRoutes);
 app.use(uploadRoutes);
 app.use('/', routesHandler);
+
+
+

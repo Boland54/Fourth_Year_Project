@@ -6,6 +6,8 @@ const jwt = require("jsonwebtoken");
 const User = require("../models/userModel");
 const { google } = require("googleapis");
 const { OAuth2 } = google.auth;
+const cors = require('cors');
+
 
 const userController = {
   register: async (req, res) => {
