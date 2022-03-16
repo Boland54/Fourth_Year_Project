@@ -47,11 +47,11 @@ function App() {
   return (
     <Router>
       <Switch>
-      <Route path='/problems' component={Problem} />
-      <Route path='/' exact component={Home} />
-      <Route path='/report' exact component={Report} />
-          <Route path='/accidents' component={Accidents} />
-          <Route path='/precaution' component={Precaution} />        
+      <Route path='/problems' component={isLoggedIn ? Problem : AuthLayout} />
+      <Route path='/' exact component={isLoggedIn ? Home : AuthLayout} />
+      <Route path='/report' exact component={isLoggedIn ? Report : AuthLayout} />
+          <Route path='/accidents' component={isLoggedIn ? Accidents : AuthLayout} />
+          <Route path='/precaution' component={isLoggedIn ? Precaution : AuthLayout} />        
         <Route
           path="/profile"
           exact

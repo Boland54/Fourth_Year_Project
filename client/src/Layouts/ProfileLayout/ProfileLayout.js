@@ -14,8 +14,10 @@ const ProfileLayout = () => {
 
   return (
     <>
-    <div className="profilelayout">
       <SiteHeader />
+
+    <div className="profilelayout">
+
     
         {/* profile */}
         <div className="profilelayout_content-profile">

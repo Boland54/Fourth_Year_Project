@@ -4,7 +4,7 @@ export const homeObjOne = {
     lightTextDesc: false,
     topLine: '2019',
     headline: 'Injuries reported by economic sector, 2019',
-      imgStart: '',
+      imgStart: 'start',
     img: '../images/2019.png',
     alt: 'Credit Card'
   };

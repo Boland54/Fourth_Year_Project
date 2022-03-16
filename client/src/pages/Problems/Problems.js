@@ -81,8 +81,6 @@ function Problems() {
                 </div>
 
 
-
-  <Footer />
   </>
   )
 }
