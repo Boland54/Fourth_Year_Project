@@ -18,11 +18,6 @@ const userSchema = new Schema(
       required: [true, "Please enter your password"],
       min: 6,
     },
-    avatar: {
-      type: String,
-      default:
-        "https://res.cloudinary.com/adamboland1/image/upload/v1645720102/avatar/blank-avatar_mylk3j.png",
-    },
   },
   { timestamp: true }
 );

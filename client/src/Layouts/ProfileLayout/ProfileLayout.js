@@ -3,7 +3,7 @@ import Feed from "../../components/Feed/Feed";
 import "./profilelayout.css";
 import SiteHeader from "../../components/siteHeader";
 import Footer from '../../components/Footer';
-import Avatar from "../../components/Avatar/Avatar";
+import Avatar from "../../components/Imagerep/Imagerep";
 import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
 

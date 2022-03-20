@@ -1,6 +1,5 @@
 import { isLength, isMatch } from "../helper/validate";
 import Input from "../Input2/Input2";
-import Avatar from "../Avatar/Avatar";
 import { MdVisibility } from "react-icons/md";
 import { MdVisibilityOff } from "react-icons/md";
 import { AiFillCamera } from "react-icons/ai";
@@ -172,19 +171,6 @@ const currDate = new Date().toLocaleDateString();
       <p> Todays date is = {currDate} </p>
 
       </div>{/* avatar */}
-        <div className="profile_avatar">
-          <div className="profile_avatar-wrapper" onClick={handleInput}>
-            <Avatar avatar={avatar} />
-            <AiFillCamera />
-          </div>
-          <input
-            type="file"
-            name="avatar"
-            ref={inputFile}
-            className="profile_avatar-input"
-            onChange={changeAvatar}
-          />
-        </div>
         {/* form */}
         <form className="profile_input" onSubmit={handleSubmit}>
           <div className="profile_input-form">

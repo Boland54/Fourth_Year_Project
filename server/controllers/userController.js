@@ -199,10 +199,10 @@ const userController = {
   update: async (req, res) => {
     try {
       // get info
-      const { name, avatar } = req.body;
+      const { name } = req.body;
 
       // update
-      await User.findOneAndUpdate({ _id: req.user.id }, { name, avatar });
+      await User.findOneAndUpdate({ _id: req.user.id }, { name });
       // success
       res.status(200).json({ msg: "Update success." });
     } catch (err) {

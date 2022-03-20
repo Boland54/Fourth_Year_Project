@@ -8,6 +8,7 @@ const reportController = {
 
         const userDescription = req.body.description;
         const userLocation = req.body.location;
+        const userAvatar = req.body.avatar
         const user = User;
         const userId = await user.findOne({email:'20084498@mail.wit.ie'}).exec();
 
@@ -21,6 +22,7 @@ const reportController = {
         const newReport = new Report({
           description: userDescription,
           location: userLocation,
+          avatar: userAvatar,
           user: userId._id
         });
 

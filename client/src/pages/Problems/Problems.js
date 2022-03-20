@@ -51,7 +51,6 @@ function Problems() {
 
   return (
     <>
-    <SiteHeader />
     <div align="center">
       <div className="tble123">
 

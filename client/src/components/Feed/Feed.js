@@ -1,4 +1,4 @@
-import Avatar from "../Avatar/Avatar";
+import Avatar from "../Imagerep/Imagerep";
 import "./feed.css";
 import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
