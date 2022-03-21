@@ -152,7 +152,6 @@ function Report() {
 </div>
 
 <div>
-<Problems />
 </div>
         <Footer/>
       </>

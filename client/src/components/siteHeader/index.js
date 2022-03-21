@@ -39,10 +39,10 @@ const SiteHeader = ( { history }) => {
 
 
   const menuOptions = [
-    { label: "Profile", path: "/profile" },
     { label: "Home", path: "/" },
+    { label: "Problems", path: "/problems" },
     { label: "Accidents", path: "/accidents" },
-    { label: "Map", path: "/maps" },
+    
 
   ];
 

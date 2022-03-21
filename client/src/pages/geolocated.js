@@ -11,6 +11,7 @@ render() {
 	// browser or not
 	return this.props.isGeolocationAvailable ? (
 
+		
 	// Check location is enable in
 	// browser or not
 	this.props.isGeolocationEnabled ? (

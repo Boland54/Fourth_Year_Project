@@ -16,6 +16,7 @@ import Map from './pages/geolocated';
 
 
 
+
 function App() {
   const { dispatch, token, isLoggedIn } = useContext(AuthContext);
 
