@@ -1,6 +1,6 @@
 import '../App.css';
 import Imagerep from "../components/Imagerep/Imagerep";
-
+import { Link } from 'react-router-dom';
 import { AiFillCamera } from "react-icons/ai";
 import { useContext, useRef, useState } from "react";
 import { isEmpty } from "../components/helper/validate";
@@ -12,6 +12,7 @@ import SiteHeader from '../components/siteHeader';
 import Footer from '../components/Footer';
 import Problems from './Problems/Problems';
 import { AuthContext } from "../context/AuthContext";
+import Map from '../pages/geolocated';
 
 
 
@@ -113,8 +114,8 @@ function Report() {
       <div className="reportss">
         <div className="gggg">
         <form onSubmit={send}>
-        <div className="profile_avatar">
-          <div className="profile_avatar-wrapper" onClick={handleInput}>
+        <div className="profile_imagerep">
+          <div className="profile_imagerep-wrapper" onClick={handleInput}>
             <Imagerep imagerep={imagerep} />
             <AiFillCamera />
           </div>
@@ -122,7 +123,7 @@ function Report() {
             type="file"
             name="imagerep"
             ref={inputFile}
-            className="profile_avatar-input"
+            className="profile_imagerep-input"
             onChange={changeImage}
           />
         </div>
@@ -140,10 +141,13 @@ function Report() {
             handleChange={handleChange}
           />
 
-          
+<Map />
+
+<br />
             <button type="submit">send</button>
           
         </form>
+
 </div>
 </div>
 

@@ -1,8 +1,6 @@
-.avatar img {
-  width: 30px;
-  height: 30px;
-  -o-object-fit: cover;
-     object-fit: cover;
-  border-radius: 50%;
+.imagerep img {
+  width: 400px;
+  height: 200px;
+  border-color: black;
 }
 /*# sourceMappingURL=avatar.css.map */

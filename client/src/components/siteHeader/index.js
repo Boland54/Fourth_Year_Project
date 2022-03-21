@@ -42,6 +42,8 @@ const SiteHeader = ( { history }) => {
     { label: "Profile", path: "/profile" },
     { label: "Home", path: "/" },
     { label: "Accidents", path: "/accidents" },
+    { label: "Map", path: "/maps" },
+
   ];
 
   const handleMenuSelect = (pageURL) => {

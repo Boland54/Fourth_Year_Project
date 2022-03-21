@@ -11,6 +11,7 @@ import Precaution from './pages/Precaution/Precaution';
 import Home from './pages/HomePage';
 import Report from './pages/Report';
 import Problem from './pages/Problems/Problems';
+import Map from './pages/geolocated';
 
 
 
@@ -47,6 +48,9 @@ function App() {
   return (
     <Router>
       <Switch>
+
+      <Route path='/maps' component={isLoggedIn ? Map : AuthLayout} />
+
       <Route path='/problems' component={isLoggedIn ? Problem : AuthLayout} />
       <Route path='/' exact component={isLoggedIn ? Home : AuthLayout} />
       <Route path='/report' exact component={isLoggedIn ? Report : AuthLayout} />
