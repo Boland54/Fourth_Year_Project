@@ -49,7 +49,7 @@ function HeroSection() {
         </a>
         
 
-        <a href="https://www.youtube.com/watch?v=4bkr5lpKGUM" target="_parent">
+        {/* <a href="https://www.youtube.com/watch?v=4bkr5lpKGUM" target="_parent">
         <Button
           className='butns1'
           buttonStyle='butn--primary'
@@ -58,12 +58,12 @@ function HeroSection() {
         >
           Safety Features <i className='far fa-play-circle' />
         </Button>
-        </a>
+        </a> */}
 
             <Button
                   label="logout"
-                  className='butns'
-                  buttonStyle='butn--outline'
+                  className='butns1'
+                  buttonStyle='butn--primary'
                   buttonSize='butn--large'
                   component={Link} to="/report"  
                   onClick={handleClick12}
