@@ -51,6 +51,8 @@ function Problems() {
 
   return (
     <>
+<SiteHeader />
+
     <div align="center">
       <div className="tble123">
 
@@ -59,7 +61,8 @@ function Problems() {
 
         <tr>
           <th>Description</th>
-          <th>Location</th>
+          <th>Location (Longitude , Latitude)</th>
+
         </tr>
 
         {
@@ -68,7 +71,8 @@ function Problems() {
         <tr>
         
           <td>{item.description}</td>
-          <td>{item.location}</td>
+          <td>{item.longitude} , {item.latitude} </td>
+          
         </tr>
   </>
   ))

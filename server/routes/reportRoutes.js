@@ -4,7 +4,6 @@ const reportController = require("../controllers/reportController");
 
 route.get("/reports", reportController.reportinfo);
 route.post("/addReport", reportController.report);
-route.post("/reports/delete", reportController.delete);
 
 
 

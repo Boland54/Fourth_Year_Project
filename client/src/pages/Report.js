@@ -19,16 +19,20 @@ import Map from '../pages/geolocated';
 const initialState = {
     description: "",
     location: "",
+    latitude: "",
+    longitude: "",
   };
 
 function Report() {
     const [visible, setVisible] = useState(false);
     const [data, setData] = useState(initialState);
-    const { description,location } = data;
+    const { description, longitude, latitude } = data;
 
 
     const inputFile = useRef(null);
     const [imagerep, setAvatar] = useState(false);
+ 
+
   
     const handleInput = () => {
       inputFile.current.click();
@@ -43,7 +47,7 @@ function Report() {
     const send = async (e) => {
       e.preventDefault();
       // check fields
-      if (isEmpty(description) || isEmpty(location))
+      if (isEmpty(description) || isEmpty(latitude) || isEmpty(longitude))
         return toast("Please fill in all fields.", {
           className: "toast-failed",
           bodyClassName: "toast-failed",
@@ -53,7 +57,8 @@ function Report() {
       try {
         const res = await axios.post("/addReport", {
           description,
-          location,
+          latitude,
+          longitude
           
         });
         toast(res.data.msg, {
@@ -134,14 +139,21 @@ function Report() {
             name="description"
             handleChange={handleChange}
           />
-          <Input
+                    <Input
             type="text"
-            text="Location"
-            name="location"
+            text="Latitude"
+            name="latitude"
             handleChange={handleChange}
           />
 
-<Map />
+<Input
+            type="text"
+            text="Longitude"
+            name="longitude"
+            handleChange={handleChange}
+          />
+<Map type="text" text="latitude" name="latitude" />
+
 
 <br />
             <button type="submit">send</button>

@@ -18,6 +18,11 @@ const userSchema = new Schema(
       required: [true, "Please enter your password"],
       min: 6,
     },
+    role: {
+      type: String,
+      required: [true, "Please enter your role (Admin/Client"],
+      min: 6,
+    },
   },
   { timestamp: true }
 );

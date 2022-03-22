@@ -7,8 +7,9 @@ const reportController = {
   report: async (req, res) => {
 
         const userDescription = req.body.description;
-        const userLocation = req.body.location;
-        const userAvatar = req.body.avatar
+        const userAvatar = req.body.avatar;
+        const userLat = req.body.latitude;
+        const userLong = req.body.longitude;
         const user = User;
         const userId = await user.findOne({email:'20084498@mail.wit.ie'}).exec();
 
@@ -21,9 +22,11 @@ const reportController = {
         
         const newReport = new Report({
           description: userDescription,
-          location: userLocation,
           avatar: userAvatar,
+          latitude : userLat,
+          longitude: userLong,
           user: userId._id
+          
         });
 
 
@@ -56,21 +59,6 @@ const reportController = {
             res.end();
         }
     });
-  },
-
-  delete: async (req, res) => {
-    try {
-      // get info
-      const userDescription = req.body.description;
-      const userLocation = req.body.location;
-
-      // update
-      await Report.findOneAndDelete({ _id }, { description, location });
-      // success
-      res.status(200).json({ msg: "Delete success." });
-    } catch (err) {
-      res.status(500).json({ msg: err.message });
-    }
   },
 }
 
