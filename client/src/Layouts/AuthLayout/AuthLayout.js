@@ -26,13 +26,14 @@ const AuthLayout = () => {
   };
 
   return (
-    <div className="authlayout">
+    <>
+    <div class="split left">
+    <div class="centered">
+    </div>
+  </div>
 
-
-      {/* logo */}
-      <div className="authlayout_logo">
-        <img src="../../assets/img/warn.png" alt="logo" />
-      </div>
+  <div class="split right">
+  <div class="centered">
       {/* form */}
       {login && <Login />}
       {register && <Register />}
@@ -50,6 +51,8 @@ const AuthLayout = () => {
         </p>
       </div>
       </div>
+      </div>
+      </>
   );
 };
 

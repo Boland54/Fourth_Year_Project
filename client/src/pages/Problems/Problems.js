@@ -61,7 +61,7 @@ function Problems() {
 
         <tr>
           <th>Description</th>
-          <th>Location (Longitude , Latitude)</th>
+          <th>Location (Latitude, Longitude)</th>
 
         </tr>
 
@@ -71,7 +71,7 @@ function Problems() {
         <tr>
         
           <td>{item.description}</td>
-          <td>{item.longitude} , {item.latitude} </td>
+          <td>{item.latitude} , {item.longitude} </td>
           
         </tr>
   </>

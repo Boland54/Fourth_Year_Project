@@ -134,13 +134,13 @@ background-color: white;
 th {
   border-bottom: 1px solid black;
   width: 500px;
-  
+  height: 40px;
 }
   
 td {
   text-align: center;
-  height: 60px;
+  height: 40px;
 }
 
-tr:nth-child(even) {background: #CCC}
+tr:nth-child(even) {background: #fff}
 tr:nth-child(odd) {background: #FFF}
