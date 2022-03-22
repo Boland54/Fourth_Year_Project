@@ -43,6 +43,7 @@
   background-repeat: no-repeat;
   color: #000000;
   font-size: 100px;
+  top: 0;
 }
 
 .accidents {
@@ -129,6 +130,7 @@ table {
 background-color: white;
   justify-content: center;
   align-items: center;
+  top: 0;
 }
   
 th {

@@ -260,7 +260,7 @@ const userController = {
           name,
           email,
           password: hashPassword,
-          avatar: picture,
+          imagerep: picture,
         });
         await newUser.save();
         // sign in the user

@@ -5,6 +5,7 @@ import SiteHeader from '../../components/siteHeader';
 import axios from "axios";
 import { toast } from "react-toastify";
 
+
 function Problems() {
   useEffect( () => {
       fetchItems();
@@ -62,6 +63,7 @@ function Problems() {
         <tr>
           <th>Description</th>
           <th>Location (Latitude, Longitude)</th>
+          <th>Image</th>
 
         </tr>
 
@@ -72,6 +74,7 @@ function Problems() {
         
           <td>{item.description}</td>
           <td>{item.latitude} , {item.longitude} </td>
+          <td>{item.imagerep} </td>
           
         </tr>
   </>

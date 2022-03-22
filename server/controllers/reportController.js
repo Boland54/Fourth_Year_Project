@@ -7,7 +7,7 @@ const reportController = {
   report: async (req, res) => {
 
         const userDescription = req.body.description;
-        const userAvatar = req.body.avatar;
+        const userImagerep = req.body.imagerep;
         const userLat = req.body.latitude;
         const userLong = req.body.longitude;
         const user = User;
@@ -22,7 +22,7 @@ const reportController = {
         
         const newReport = new Report({
           description: userDescription,
-          avatar: userAvatar,
+          imagerep: userImagerep,
           latitude : userLat,
           longitude: userLong,
           user: userId._id

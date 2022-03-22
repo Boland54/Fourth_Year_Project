@@ -18,7 +18,6 @@ import Map from '../pages/geolocated';
 
 const initialState = {
     description: "",
-    location: "",
     latitude: "",
     longitude: "",
   };
@@ -30,7 +29,7 @@ function Report() {
 
 
     const inputFile = useRef(null);
-    const [imagerep, setAvatar] = useState(false);
+    const [imagerep, setImagerep] = useState(false);
  
 
   
@@ -56,6 +55,7 @@ function Report() {
 
       try {
         const res = await axios.post("/addReport", {
+          imagerep,
           description,
           latitude,
           longitude
@@ -95,7 +95,7 @@ function Report() {
               });
           },
         });
-        setAvatar(res.data.url);
+        setImagerep(res.data.url);
       } catch (err) {
         toast(err.response.data.msg, {
           className: "toast-failed",
@@ -109,7 +109,7 @@ function Report() {
       Array.from(document.querySelectorAll("input")).forEach(
         (input) => (input.value = "")
       );
-      setData({ ...data, description: "", location: "" });
+      setData({ ...data, description: "", latitude: "" , longitude: ""});
     };
   
     return (

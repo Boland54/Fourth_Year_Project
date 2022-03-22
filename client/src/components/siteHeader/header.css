@@ -90,7 +90,7 @@
     top: 60px;
     right: -100%;
     opacity: 1;
-    transition: all 1s ease;
+    transition: all 0.5s ease;
   }
 
   .nav-menu.active {
