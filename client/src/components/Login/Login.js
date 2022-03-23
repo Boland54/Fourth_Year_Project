@@ -45,8 +45,11 @@ const Login = () => {
         bodyClassName: "toast-failed",
       });
     try {
-      await axios.post("/api/auth/signing", { email, password });
+      const response = await axios.post("/api/auth/signing", { email, password });
+      console.log(await response)
+      localStorage.setItem("currentUser", response.data.user._id)
       localStorage.setItem("_appSignging", true);
+    
       dispatch({ type: "SIGNING" });
     } catch (err) {
       toast(err.response.data.msg, {
@@ -97,7 +100,11 @@ const Login = () => {
           handleChange={handleChange}
         />
         <div className="login_btn">
+
+
           <button type="submit">login</button>
+
+
           <GoogleLogin
             clientId={process.env.REACT_APP_G_CLIENT_ID}
             render={(renderProps) => (

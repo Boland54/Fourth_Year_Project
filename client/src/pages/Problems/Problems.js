@@ -74,7 +74,16 @@ function Problems() {
         
           <td>{item.description}</td>
           <td>{item.latitude} , {item.longitude} </td>
-          <td>{item.imagerep} </td>
+          <td><a href={item.imagerep} target="_parent">
+        <button
+          className='butns1'
+          buttonStyle='butn--primary'
+          buttonSize='butn--large'
+          onClick={console.log('hey')}
+        >
+          Photo <i className='far fa-play-circle' />
+        </button>
+        </a> </td>
           
         </tr>
   </>

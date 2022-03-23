@@ -25,6 +25,8 @@ const initialState = {
 function Report() {
     const [visible, setVisible] = useState(false);
     const [data, setData] = useState(initialState);
+    const loca = useContext(Map);
+
     const { description, longitude, latitude } = data;
 
 
@@ -58,7 +60,8 @@ function Report() {
           imagerep,
           description,
           latitude,
-          longitude
+          longitude,
+          user: localStorage.getItem("currentUser")
           
         });
         toast(res.data.msg, {

@@ -10,8 +10,7 @@ const reportController = {
         const userImagerep = req.body.imagerep;
         const userLat = req.body.latitude;
         const userLong = req.body.longitude;
-        const user = User;
-        const userId = await user.findOne({email:'20084498@mail.wit.ie'}).exec();
+        const user = req.body.user;
 
       // const rf_token = createToken.access({ id: user._id });
       // res.cookie("_apprftoken", rf_token, {
@@ -25,11 +24,14 @@ const reportController = {
           imagerep: userImagerep,
           latitude : userLat,
           longitude: userLong,
-          user: userId._id
+          user : user
+        
           
         });
 
 
+
+        console.log(newReport);
 
         
         try {
