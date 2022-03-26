@@ -1,6 +1,5 @@
 import React from 'react';
 import SiteHeader from '../../components/siteHeader';
-import Footer from '../../components/Footer';
 import '../../components/accidents.css';
 import Pricing from '../../components/Pricing';
 import { homeObjOne, homeObjTwo } from './Data';
@@ -17,8 +16,6 @@ export default function Accidents() {
     <Hero {...homeObjOne} />
       <Hero {...homeObjTwo} />
       <Pricing />
-
-    <Footer />
     </>
   )
 }

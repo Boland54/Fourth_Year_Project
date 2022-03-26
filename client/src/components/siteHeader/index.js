@@ -1,77 +1,75 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import './header.css';
-import { MdFingerprint } from 'react-icons/md';
-import { FaBars, FaTimes } from 'react-icons/fa';
-import { IconContext } from 'react-icons/lib';
+import React from 'react';
+import { Nav, NavItem} from 'reactstrap';
+import { NavLink } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch, faHome, faUserCircle } from '@fortawesome/free-solid-svg-icons';
 
-function SiteHeader() {
-  const [click, setClick] = useState(false);
-  const [button, setButton] = useState(true);
+const tabs = [{
+  route: "/",
+  icon: faHome,
+  label: "Home"
+},{
+  route: "/problems",
+  icon: faSearch,
+  label: "Problems"
+},{
+  route: "/accidents",
+  icon: faUserCircle,
+  label: "Accidents"
+}]
 
-  const handleClick = () => setClick(!click);
-  const closeMobileMenu = () => setClick(false);
 
-  const showButton = () => {
-    if (window.innerWidth <= 960) {
-      setButton(false);
-    } else {
-      setButton(true);
-    }
-  };
-
-  useEffect(() => {
-    showButton();
-    window.addEventListener('resize', showButton);
-    return {
-      // window.removeEventListener('resize', showButton)
-    }
-  }, []);
-
+const SiteHeader = (props) => {
 
   return (
-    <>
-      <IconContext.Provider value={{ color: '#fff' }}>
-        <nav className='navbar'>
-          <div className='navbar-container container'>
-            <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
-   {/* <MdFingerprint className='navbar-icon' /> */}
-              SafetyApp
-            </Link>
-            <div className='menu-icon' onClick={handleClick}>
-              {click ? <FaTimes /> : <FaBars />}
-            </div>
-            <ul className={click ? 'nav-menu active' : 'nav-menu'}>
-              <li className='nav-item'>
-                <Link to='/' className='nav-links' onClick={closeMobileMenu}>
-                  Home
-                </Link>
-              </li>
-              <li className='nav-item'>
-                <Link
-                  to='/problems'
-                  className='nav-links'
-                  onClick={closeMobileMenu}
-                >
-                  Problems
-                </Link>
-              </li>
-              <li className='nav-item'>
-                <Link
-                  to='/accidents'
-                  className='nav-links'
-                  onClick={closeMobileMenu}
-                >
-                  Accidents
-                </Link>
-              </li>
-              
-            </ul>
-          </div>
-        </nav>
-      </IconContext.Provider>
-    </>
-  );
-}
+    <div>
+    <nav className="navbar navbar-expand-md navbar-dark d-none d-lg-block sticky-top" role="navigation">
+      <div className="container-fluid">
+          <a className="navbar-brand" href="/home">Brand</a>
+          <Nav className="ml-auto">
+            <NavItem>
+                
+              <NavLink to="/" className="nav-link">
+                Home
+              </NavLink>
+            </NavItem>
+            <NavItem>
+                
+              <NavLink to="/problems" className="nav-link">
+                Problems
+              </NavLink>
+            </NavItem>
+
+            <NavItem>
+              <NavLink to="/accidents" className="nav-link">
+                Accidents
+              </NavLink>
+            </NavItem>
+          </Nav>
+      </div>
+    </nav>
+    <div className='ccc'>
+  <nav className="navbar fixed-bottom d-block d-lg-none bottom-tab-nav" role="navigation">
+    <Nav className="w-100">
+      <div className=" d-flex flex-row justify-content-around w-100">
+        {
+          tabs.map((tab, index) =>(
+            <NavItem key={`tab-${index}`}>
+              <NavLink to={tab.route} className="nav-link bottom-nav-link" activeClassName="active">
+                <div className="row d-flex flex-column justify-content-center align-items-center">
+                  <FontAwesomeIcon size="lg" icon={tab.icon}/>
+                  <div className="bottom-tab-label">{tab.label}</div>
+                </div>
+              </NavLink>
+            </NavItem>
+          ))
+        }
+      </div>
+    </Nav>
+  </nav>
+  </div>
+  </div>
+  )
+};
 
 export default SiteHeader;

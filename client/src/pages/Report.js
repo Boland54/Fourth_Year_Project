@@ -9,9 +9,6 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Input from "../components/Input2/Input2";
 import SiteHeader from '../components/siteHeader';
-import Footer from '../components/Footer';
-import Problems from './Problems/Problems';
-import { AuthContext } from "../context/AuthContext";
 import Map from '../pages/geolocated';
 
 
@@ -167,9 +164,7 @@ function Report() {
 </div>
 
 <div>
-</div>
-        <Footer/>
-      </>
+</div>      </>
     );
   };
 

@@ -1,10 +1,9 @@
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 import ActivateLayout from "./Layouts/ActivateLayout/ActivateLayout";
 import AuthLayout from "./Layouts/AuthLayout/AuthLayout";
-import ProfileLayout from "./Layouts/ProfileLayout/ProfileLayout";
 import ResetLayout from "./Layouts/ResetLayout/ResetLayout";
 import { AuthContext } from "./context/AuthContext";
-import { useContext, useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import axios from "axios";
 import Accidents from './pages/Accidents/Accidents';
 import Precaution from './pages/Precaution/Precaution';
@@ -47,21 +46,16 @@ function App() {
   }, [dispatch, token]);
 
   return (
-    <Router>
+    <div>
+    <BrowserRouter>
       <Switch>
-
       <Route path='/maps' component={isLoggedIn ? Map : AuthLayout} />
-
       <Route path='/problems' component={isLoggedIn ? Problem : AuthLayout} />
       <Route path='/' exact component={isLoggedIn ? Home : AuthLayout} />
       <Route path='/report' exact component={isLoggedIn ? Report : AuthLayout} />
           <Route path='/accidents' component={isLoggedIn ? Accidents : AuthLayout} />
           <Route path='/precaution' component={isLoggedIn ? Precaution : AuthLayout} />        
-        <Route
-          path="/profile"
-          exact
-          component={isLoggedIn ? ProfileLayout : AuthLayout}
-        />
+ 
         <Route
           path="/auth/reset-password/:token"
           exact
@@ -73,7 +67,8 @@ function App() {
           component={ActivateLayout}
         />
       </Switch>
-    </Router>
+    </BrowserRouter>
+    </div>
   );
 }
 
