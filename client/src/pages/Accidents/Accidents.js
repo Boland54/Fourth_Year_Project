@@ -1,7 +1,7 @@
 import React from 'react';
 import SiteHeader from '../../components/siteHeader';
 import '../../components/accidents.css';
-import Pricing from '../../components/Pricing';
+import Results from '../../components/Results';
 import { homeObjOne, homeObjTwo } from './Data';
 import Hero from '../../components/Hero';
 
@@ -15,7 +15,7 @@ export default function Accidents() {
    
     <Hero {...homeObjOne} />
       <Hero {...homeObjTwo} />
-      <Pricing />
+      <Results />
     </>
   )
 }

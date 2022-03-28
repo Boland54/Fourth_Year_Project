@@ -4,6 +4,7 @@
     flex-direction: column;
     justify-content: center;
     background: #fafafa;
+    
   }
   
   .pricing__container-card {
@@ -18,7 +19,7 @@
   
   .pricing__container-card:nth-child(2) {
     transform: scale(1.05);
-    background: #000;
+    background: #fff000;
   }
   
   .pricing__container-card:hover {
@@ -55,7 +56,7 @@
     height: 500px;
     padding: 24px;
     align-items: center;
-    color: #fff;
+    color: #000;
   }
   
   .pricing__container-cardInfo h3 {
@@ -113,7 +114,7 @@
   
     .pricing__container-card:nth-child(2) {
       transform: scale(1);
-      background: #242424;
+      background: #fff000;
       margin: 24px;
     }
   

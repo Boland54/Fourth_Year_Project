@@ -1,21 +1,21 @@
 export const homeObjOne = {
-    lightBg: false,
-    lightText: true,
-    lightTextDesc: true,
+    lightBg: true,
+    lightText: false,
+    lightTextDesc: false,
     topLine: 'Stay Alert',
     headline: 'The more awake a worker is, the less likely he or she is to get hurt.',
-    imgStart: '',
+    imgStart: 'start',
     img: 'images/alert.jpg',
     alt: 'Credit Card'
   };
   
   export const homeObjTwo = {
-    lightBg: false,
-    lightText: true,
-    lightTextDesc: true,
+    lightBg: true,
+    lightText: false,
+    lightTextDesc: false,
     topLine: 'Wear the right chlothes',
     headline: 'Wear protective clothing and equipment as required.',
-    imgStart: '',
+    imgStart: 'start',
     img: 'images/safehat.jpg',
     alt: 'Vault'
   };
@@ -32,12 +32,12 @@ export const homeObjOne = {
   };
   
   export const homeObjFour = {
-    lightBg: false,
-    lightText: true,
-    lightTextDesc: true,
+    lightBg: true,
+    lightText: false,
+    lightTextDesc: false,
     topLine: 'Follow the rules',
     headline: 'Always follow the rules and do not take shortcuts. Assess risk before working',
-    imgStart: '',
+    imgStart: 'start',
     img: 'images/rulesss.png',
     alt: 'Vault'
   };

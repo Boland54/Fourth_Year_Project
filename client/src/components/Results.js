@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from './Button';
-import './pricing.css';
+import './results.css';
 import { GiInternalInjury } from 'react-icons/gi';
 import { GiRingingBell } from 'react-icons/gi';
 
@@ -8,7 +8,7 @@ import { GiLadder } from 'react-icons/gi';
 import { IconContext } from 'react-icons/lib';
 import { Link } from 'react-router-dom';
 
-function Pricing() {
+function Results() {
   return (
     <IconContext.Provider value={{ color: '#fff', size: 64 }}>
       <div className='pricing__section'>
@@ -73,4 +73,4 @@ function Pricing() {
     </IconContext.Provider>
   );
 }
-export default Pricing;
+export default Results;

@@ -15,7 +15,7 @@ export const homeObjOne = {
     lightTextDesc: true,
     topLine: '2020',
     headline: 'Injuries reported by economic sector, 2020',
-    imgStart: '',
+    imgStart: 'start',
     img: '../images/2020.png',
     alt: 'Vault'
   };

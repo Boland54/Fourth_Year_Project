@@ -1,8 +1,11 @@
 import React, {useEffect, useState} from 'react';
-import '../../App.css';
-import SiteHeader from '../../components/siteHeader';
+import SiteHeader from '../components/siteHeader';
 import axios from "axios";
 import { toast } from "react-toastify";
+import { Table} from 'reactstrap';
+import '../App.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 
 const Problems = (props) => {
@@ -54,18 +57,19 @@ const Problems = (props) => {
 <SiteHeader />
 
     <div align="center">
-      <div className="tble123">
+      <div>
 
       
-        <table>
-
+        <Table bordered hover responsive >
+<thead>
         <tr>
           <th>Description</th>
           <th>Location (Latitude, Longitude)</th>
           <th>Image</th>
 
         </tr>
-
+        </thead>
+        <tbody>
         {
       items.map(item => (
         <>
@@ -88,7 +92,8 @@ const Problems = (props) => {
   </>
   ))
 }
-        </table>
+</tbody>
+        </Table>
 
 
                 </div>

@@ -52,7 +52,7 @@ const SiteHeader = (props) => {
 
     <div className='ccc'>
 
-  <nav className="navbar fixed-bottom d-block bg-black text-warning d-lg-none bottom-tab-nav" role="navigation">
+  <nav className="navbar fixed-bottom d-block bg-white text-dark d-lg-none bottom-tab-nav" role="navigation">
 
     <Nav className="w-100">
 
@@ -61,7 +61,7 @@ const SiteHeader = (props) => {
         {
           tabs.map((tab, index) =>(
             <NavItem key={`tab-${index}`}>
-              <NavLink to={tab.route} className="nav-link bottom-nav-link text-warning" activeClassName="active">
+              <NavLink to={tab.route} className="nav-link bottom-nav-link text-black" activeClassName="active">
                 <div className="row d-flex flex-column justify-content-center align-items-center">
                   <FontAwesomeIcon size="lg" icon={tab.icon}/>
                   <div className="bottom-tab-label">{tab.label}</div>

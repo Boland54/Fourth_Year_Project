@@ -9,7 +9,7 @@ import Accidents from './pages/Accidents/Accidents';
 import Precaution from './pages/Precaution/Precaution';
 import Home from './pages/HomePage';
 import Report from './pages/Report';
-import Problem from './pages/Problems/Problems';
+import Problem from './pages/Problems';
 import Map from './pages/geolocated';
 
 
