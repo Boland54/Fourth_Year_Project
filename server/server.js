@@ -1,50 +1,26 @@
-const userRoutes = require("./routes/userRoutes");
-const uploadRoutes = require("./routes/uploadRoutes");
-const mongoose = require("mongoose");
-const bodyParser = require('body-parser');
-const routesHandler = require('./routes/reportRoutes');
-const express = require("express");
+import express from "express";
+import dotenv from "dotenv";
+import connectDatabase from "./config/MongoDb.js";
+import ImportData from "./DataImport.js";
+import productRoute from "./Routes/ProductRoutes.js";
+import { errorHandler, notFound } from "./Middleware/Errors.js";
+import userRouter from "./Routes/UserRoutes.js";
+
+dotenv.config();
+connectDatabase();
 const app = express();
-require('dotenv/config');
-const morgan = require('morgan');
-const cors = require('cors');
-const cookieParser = require('cookie-parser');
-
-// db
-mongoose.connect(
-  process.env.MONGO_URL,
-  {
-    useCreateIndex: true,
-    useFindAndModify: false,
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  },
-  (err) => {
-    if (err) throw err;
-    console.log("db connected");
-
-    const PORT = 8000;
-    app.listen(PORT, () => {
-      console.log("server is active");
-    });
-  }
-);
-
-// mw
 app.use(express.json());
-// express.urlencoded({ extended: true });
-app.use(bodyParser.urlencoded({extended:false}));
-app.use(bodyParser.json());
-app.use("/uploads", express.static("uploads"));
-app.use(morgan('dev'));
-app.use(cookieParser());
-app.use(cors());
+
+// API
+app.use("/api/import", ImportData);
+app.use("/api/reports", productRoute);
+app.use("/api/users", userRouter);
 
 
-// routes
-app.use(userRoutes);
-app.use(uploadRoutes);
-app.use('/', routesHandler);
+// ERROR HANDLER
+app.use(notFound);
+app.use(errorHandler);
 
+const PORT = process.env.PORT || 5000;
 
-
+app.listen(PORT, console.log(`server run in port ${PORT}`));

@@ -1,74 +1,67 @@
-import { BrowserRouter, Switch, Route } from "react-router-dom";
-import ActivateLayout from "./Layouts/ActivateLayout/ActivateLayout";
-import AuthLayout from "./Layouts/AuthLayout/AuthLayout";
-import ResetLayout from "./Layouts/ResetLayout/ResetLayout";
-import { AuthContext } from "./context/AuthContext";
-import React, { useContext, useEffect } from "react";
-import axios from "axios";
-import Accidents from './pages/Accidents/Accidents';
-import Precaution from './pages/Precaution/Precaution';
-import Home from './pages/HomePage';
-import Report from './pages/Report';
-import Problem from './pages/Problems';
-import Map from './pages/geolocated';
-
-
-
+import React, { useEffect } from "react";
+import "./App.css";
+import "./responsive.css";
+import "react-toastify/dist/ReactToastify.css";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import HomeScreen from "./screens/HomeScreen";
+import ProductScreen from "./screens/productScreen";
+import CategoriesScreen from "./screens/CategoriesScreen";
+import OrderScreen from "./screens/OrderScreen";
+import OrderDetailScreen from "./screens/OrderDetailScreen";
+import AddProduct from "./screens/AddProduct";
+import Login from "./screens/LoginScreen";
+import UsersScreen from "./screens/UsersScreen";
+import ProductEditScreen from "./screens/ProductEditScreen";
+import NotFound from "./screens/NotFound";
+import PrivateRouter from "./PrivateRouter";
+import { useDispatch, useSelector } from "react-redux";
+import { listProducts } from "./Redux/Actions/ProductActions";
+import { listOrders } from "./Redux/Actions/OrderActions";
+import Register from "./screens/Register";
+import Home from './screens/HomePage';
+import Accidents from './screens/Accidents/Accidents';
+import Precaution from './screens/Precaution/Precaution';
 
 
 function App() {
-  const { dispatch, token, isLoggedIn } = useContext(AuthContext);
+  const dispatch = useDispatch();
 
-  // get ac token
-  useEffect(() => {
-    const _appSignging = localStorage.getItem("_appSignging");
-    if (_appSignging) {
-      const getToken = async () => {
-        const res = await axios.post("/api/auth/access", null);
-        dispatch({ type: "GET_TOKEN", payload: res.data.ac_token });
-      };
-      getToken();
-    }
-  }, [dispatch, isLoggedIn]);
+  const userLogin = useSelector((state) => state.userLogin);
+  const { userInfo } = userLogin;
 
-  // get user data
   useEffect(() => {
-    if (token) {
-      const getUser = async () => {
-        dispatch({ type: "SIGNING" });
-        const res = await axios.get("/api/auth/user", {
-          headers: { Authorization: token },
-        });
-        dispatch({ type: "GET_USER", payload: res.data });
-      };
-      getUser();
+    if (userInfo) {
+      dispatch(listProducts());
+      dispatch(listOrders());
     }
-  }, [dispatch, token]);
+  }, [dispatch, userInfo]);
+
 
   return (
-    <div>
-    <BrowserRouter>
-      <Switch>
-      <Route path='/maps' component={isLoggedIn ? Map : AuthLayout} />
-      <Route path='/problems' component={isLoggedIn ? Problem : AuthLayout} />
-      <Route path='/' exact component={isLoggedIn ? Home : AuthLayout} />
-      <Route path='/report' exact component={isLoggedIn ? Report : AuthLayout} />
-          <Route path='/accidents' component={isLoggedIn ? Accidents : AuthLayout} />
-          <Route path='/precaution' component={isLoggedIn ? Precaution : AuthLayout} />        
+    <>
+      <Router>
+        <Switch>
+          <PrivateRouter path="/" component={Home} exact />
+          <PrivateRouter path="/list" component={HomeScreen} exact />
+          <PrivateRouter path="/products" component={ProductScreen} />
+          <PrivateRouter path="/category" component={CategoriesScreen} />
+          <PrivateRouter path="/orders" component={OrderScreen} />
+          <PrivateRouter path="/order/:id" component={OrderDetailScreen} />
+          <PrivateRouter path="/addproduct" component={AddProduct} />
+          <PrivateRouter path="/users" component={UsersScreen} />
+          <PrivateRouter
+            path="/reports/:id/edit"
+            component={ProductEditScreen}
+          />
+          <Route path='/accidents' component={Accidents} />
+          <Route path='/precaution' component={ Precaution } />        
  
-        <Route
-          path="/auth/reset-password/:token"
-          exact
-          component={ResetLayout}
-        />
-        <Route
-          path="/api/auth/activate/:activation_token"
-          exact
-          component={ActivateLayout}
-        />
-      </Switch>
-    </BrowserRouter>
-    </div>
+          <Route path="/register" component={Register} />
+          <Route path="/login" component={Login} />
+          <PrivateRouter path="*" component={NotFound} />
+        </Switch>
+      </Router>
+    </>
   );
 }
 
